@@ -30,4 +30,14 @@ describe("SimpleStorage", function () {
     assert.equal(currentValue.toString() , expectedValue)
   })
 
+  it("should return the value sent in the addPerson function" , async function () {
+    const firster = "rio"
+    const firsterNum = "12"
+    const txn = await simpleStorage.addPerson(firster , firsterNum)
+    await txn.wait(1)
+
+    const rioValue = await simpleStorage.viewPersonNumber(firster)
+    assert.equal(rioValue.toString() , firsterNum)
+  })
+
   })

@@ -3,6 +3,7 @@ require("dotenv").config();
 require("@nomiclabs/hardhat-etherscan");
 require("./tasks/blocknumber");
 require("hardhat-gas-reporter")
+require("solidity-coverage")
 
 
 
